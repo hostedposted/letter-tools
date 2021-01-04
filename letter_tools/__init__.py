@@ -2,14 +2,17 @@ import random
 
 def Range(a = 1, b = 1):
     if isinstance(a, int) == True and isinstance(b, int) == True:
+        if b == 1:
+            b = a
+            a = 0
         return range(a, b)
     elif isinstance(a, str) == True and isinstance(b, str) == True:
-        re = """
-    abcdefghijklmnopqrstuvwxyz
-    """
         if b == 1:
             b = a
             a = 1
+        re = """
+    abcdefghijklmnopqrstuvwxyz
+    """
         letter_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         n = 0
         for i in letter_list:
