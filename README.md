@@ -10,13 +10,16 @@ $ pip install letter-tools
 # Examples
 First an example for randomly picking a letter.
 ```py
->>> from letter_tools import randlet
->>> randlet("a", "h")
+>>> from letter_tools import rand
+>>> rand("a", "h")
 c
->>> randlet("a", "h")
+>>> rand("a", "h")
 g
+>>> rand(1, 10)
+5
+>>> rand(1, 10)
+7
 ```
-as you can above see each time it randomly picks a letter from your range.
 Another example for randomly picking a letter out of numbers.
 
 ```py
@@ -30,8 +33,8 @@ e
 Next an example for ranges.
 
 ```py
->>> from letter_tools import letter
->>> for i in letter("i"):
+>>> from letter_tools import Range
+>>> for i in Range("i"):
 ...     print(i)
 ...
 a
@@ -44,11 +47,19 @@ g
 h
 i
 
->>> for i in letter("d", "g"):
+>>> for i in Range("d", "g"):
 ...     print(i)
 ...
 d
 e
 f
 g
+
+>>> for i in Range(1, 5):
+...     print(i)
+...
+1
+2
+3
+4
 ```
