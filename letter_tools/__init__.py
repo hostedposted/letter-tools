@@ -6,7 +6,7 @@ def Range(a = 1, b = 1):
             b = a
             a = 0
         return range(a, b)
-    elif isinstance(a, str) == True and isinstance(b, str) == True:
+    elif isinstance(a, str) == True:
         if b == 1:
             b = a
             a = 1
