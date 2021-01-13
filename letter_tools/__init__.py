@@ -1,7 +1,7 @@
 import random
 
 def Range(a = 1, b = 1):
-    if isinstance(a, int) == True and isinstance(b, int) == True:
+    if isinstance(a, int) == True:
         if b == 1:
             b = a
             a = 0
@@ -11,7 +11,7 @@ def Range(a = 1, b = 1):
             b = a
             a = 1
         re = """
-    abcdefghijklmnopqrstuvwxyz
+    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
     """
         letter_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         n = 0
@@ -36,11 +36,11 @@ def Range(a = 1, b = 1):
 
 
 def rand(a = 1, b = 1):
-    if isinstance(a, int) == True and isinstance(b, int) == True:
+    if isinstance(a, int) == True:
         print(random.randint(a, b))
     else:
         re = """
-    abcdefghijklmnopqrstuvwxyz
+    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
     """
         if b == 1:
             b = a
