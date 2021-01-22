@@ -25,9 +25,9 @@ Another example for randomly picking a letter out of numbers.
 
 ```py
 >>> from letter_tools import randlet
->>> randlet(4, 8)
+>>> rand(4, 8)
 h
->>> randlet(5, 7)
+>>> rand(5, 7)
 e
 ```
 
