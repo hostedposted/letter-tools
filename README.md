@@ -1,9 +1,10 @@
 # Letter Tools
+[![Downloads](https://pepy.tech/badge/letter-tools/month)](https://pepy.tech/project/letter-tools)
 This is a very simple module that allows you to randomly get letters and make letter for loops.
 
 # Installing
 To install use this command:
-```
+```shell
 $ pip install letter-tools
 ```
 
@@ -33,8 +34,8 @@ e
 Next an example for ranges.
 
 ```py
->>> from letter_tools import Range
->>> for i in Range("i"):
+>>> from letter_tools import range
+>>> for i in range("i"):
 ...     print(i)
 ...
 a
@@ -47,7 +48,7 @@ g
 h
 i
 
->>> for i in Range("d", "g"):
+>>> for i in range("d", "g"):
 ...     print(i)
 ...
 d
@@ -55,11 +56,26 @@ e
 f
 g
 
->>> for i in Range(1, 5):
+>>> for i in range(1, 5):
 ...     print(i)
 ...
 1
 2
 3
 4
+5
+
+#Using step
+
+>>> for i in range(1, 5, 3):
+...     print(i)
+...
+1
+4
+
+>>> for i in range("d", "g", 3):
+...     print(i)
+...
+d
+g
 ```
