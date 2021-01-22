@@ -20,10 +20,8 @@ def range(a = 1, b = 1, step=1):
         if b == 1:
             b = a
             a = 1
-        re = """
-    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-    """
-        letter_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        re = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"""
+        letter_list = list(re)
         n = 0
         for i in letter_list:
             n += 1
@@ -49,13 +47,11 @@ def rand(a = 1, b = 1):
     if isinstance(a, int) == True:
         print(random.randint(a, b))
     else:
-        re = """
-    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-    """
+        re = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"""
         if b == 1:
             b = a
             a = 1
-        letter_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        letter_list = list(re)
         n = 0
         for i in letter_list:
             n += 1
