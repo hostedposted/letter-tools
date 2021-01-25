@@ -5,14 +5,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="letter-tools",
-    version="0.0.8",
+    version="0.0.9",
     author="Hostedposted",
     author_email="hostedpostedsite@gmail.com",
     description="Python tools for doing stuff with letters.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/hostedposted/letter-tools",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude="/words.json"),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

@@ -1,6 +1,20 @@
+
+
 # Letter Tools
 [![Downloads](https://pepy.tech/badge/letter-tools/month)](https://pepy.tech/project/letter-tools)
-This is a very simple module that allows you to randomly get letters and make letter for loops.
+
+- [Letter Tools](#letter-tools)
+- [Intro](#intro)
+- [Installing](#installing)
+- [Examples](#examples)
+- [Usage](#usage)
+
+
+# Intro
+
+This is a collection of tools for doing stuff with letters.
+
+With a randint for letters and a range for letters and more.
 
 # Installing
 To install use this command:
@@ -78,4 +92,50 @@ g
 ...
 d
 g
+```
+
+Now an example for word score.
+
+```py
+# Find the score of a word a=1, b=2 and add up the numbers for all the letters
+
+>>> from letter_tools import word_score
+>>> print(word_score("hi")) 
+17
+>>> print(word_score("letter"))       
+80
+```
+
+# Usage
+
+Word score could help you make with making a game to find certain scored words. Here is an example for 100 scored words. This will not eliminate invalid words.
+
+```py
+from letter_tools import word_score
+
+while True:
+    word = input("Could you give me some words that add up to 100 exactly?\na=1, b=2 and so on\n")
+    if word_score(word) == 100:
+        print(f"{word} is a 100 letter word correct!!!")
+        break
+    else:
+        print(f"{word} is a {word_score(word)} not a 100 letter word wrong.")
+```
+
+We could also make a script to find 100 scored words.
+For this we will use the requests library and using [Dwyl's english word set](https://github.com/dwyl/english-words) I generated a json you could use for this.
+
+This is the code:
+
+```py
+from letter_tools import word_score
+import requests
+
+words = requests.get("https://raw.githubusercontent.com/hostedposted/letter-tools/master/words.json").json()
+for i in words:
+    try:
+        if word_score(i) == 100:
+            print(i)
+    except KeyError:
+        pass
 ```
