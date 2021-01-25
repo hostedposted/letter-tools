@@ -109,8 +109,24 @@ def word_score(word):
         The score of the word
     """
     arr = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
-    num = 0
+    score = 0
     for i in list(word):
-        num += arr[i]
+        score += arr[i]
     
-    return num
+    return score
+
+def scrabble_score(word):
+    """
+    Count up the score of a word in scrabble points.
+    
+    Args:
+        word: the word to get the score of
+    Returns:
+        The score of the word in scrabble points
+    """
+    arr = {'a': 1,'b': 3,'c': 3,'d': 2,'e': 1,'f': 4,'g': 2,'h': 4,'i': 1,'j': 8,'k': 5,'l': 1,'m': 3,'n': 1,'o': 1,'p': 3,'q': 10,'r': 1,'s': 1,'t': 1,'u': 1,'v': 4,'w': 4,'x': 8,'y': 4,'z': 10}
+    score = 0
+    for i in list(word):
+        score += arr[i]
+    
+    return score

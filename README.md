@@ -106,9 +106,18 @@ Now an example for word score.
 80
 ```
 
+Here we will use the scrabble score, it does almost the same thing as word score but it uses scrabble scoring rules.  a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 2, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3, n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10
+```py
+>>> from letter_tools import scrabble_score
+>>> print(scrabble_score("hi")) 
+5   
+>>> print(scrabble_score("letter")) 
+6   
+```
+
 # Usage
 
-Word score could help you make with making a game to find certain scored words. Here is an example for 100 scored words. This will not eliminate invalid words.
+Word score could help you with making a game to find certain scored words. Here is an example for 100 scored words. This will not eliminate invalid words.
 
 ```py
 from letter_tools import word_score
