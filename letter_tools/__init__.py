@@ -3,7 +3,7 @@ Module for doing stuff with letters.
 """
 import random
 
-def range(start = 1, stop = 1, step=1):
+def range(start = 1, stop = 1, step = 1):
     """Find a range from one letter to another.
     
     Args:
@@ -20,19 +20,22 @@ def range(start = 1, stop = 1, step=1):
         TypeError: str or int is required
     """
     if isinstance(step, int) == False:
-        raise Exception(f"step is {type(step)} and is thus invalid.")
+        raise Exception("step is {} and is thus invalid.".format(type(step)))
     if isinstance(start, int) == True:
-        if stop == 1:
-            stop = start
-            start = 0
-        if start == stop: 
-            return start
-        else: 
-            res = []
-            while start < stop + 1: 
-                res.append(start) 
-                start += 1
-            return res[0:len(res):step]
+        if start == 1 and stop == 1:
+            return [1]
+        else:
+            if stop == 1:
+                stop = start
+                start = 0
+            if start == stop: 
+                return [start]
+            else: 
+                res = []
+                while start < stop + 1: 
+                    res.append(start) 
+                    start += 1
+                return res[0:len(res):step]
     elif isinstance(start, str) == True:
         if stop == 1:
             stop = start
@@ -108,6 +111,9 @@ def word_score(word, opt=None):
         opt: if opt does not equal None z will be 1 and a will be 26
     Returns:
         The score of the word
+    
+    Raises:
+        KeyError: character is invalid
     """
     if opt == None:
         arr = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
@@ -132,6 +138,9 @@ def scrabble_score(word):
         word: the word to get the score of
     Returns:
         The score of the word in scrabble points
+
+    Raises:
+        KeyError: character is invalid
     """
     arr = {'a': 1,'b': 3,'c': 3,'d': 2,'e': 1,'f': 4,'g': 2,'h': 4,'i': 1,'j': 8,'k': 5,'l': 1,'m': 3,'n': 1,'o': 1,'p': 3,'q': 10,'r': 1,'s': 1,'t': 1,'u': 1,'v': 4,'w': 4,'x': 8,'y': 4,'z': 10}
     score = 0
@@ -151,3 +160,4 @@ def randomize(word):
 
     letters = list(word)
     return "".join(random.sample(letters,len(letters)))
+

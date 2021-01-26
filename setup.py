@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="letter-tools",
-    version="0.1.4",
+    version="0.1.6",
     author="Hostedposted",
     author_email="hostedpostedsite@gmail.com",
     description="Python tools for doing stuff with letters.",
@@ -14,9 +14,16 @@ setuptools.setup(
     url="https://github.com/hostedposted/letter-tools",
     packages=setuptools.find_packages(exclude="/words.json"),
     classifiers=[
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=2.7',
 )
