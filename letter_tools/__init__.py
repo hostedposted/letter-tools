@@ -165,7 +165,7 @@ def randomize(word):
 
 def derandomize(Word):
     """
-    Show all posible words that this be.
+    Show all posible words that word can be.
     Args:
         Word: the word to be derandomized
     Results:
@@ -179,7 +179,9 @@ def derandomize(Word):
         chars = {} 
         for i in word: 
             chars[i] = chars.get(i, 0) + 1
+        count = -1
         for key in chars:
+            count += 1
             if flag == 0:
                 break
             if key not in Word: 
@@ -187,6 +189,10 @@ def derandomize(Word):
             else: 
                 if Word.count(key) != chars[key]: 
                     flag = 0
+            if "?" in Word:
+                word_indice = [i for i, x in enumerate(Word) if x == '?']
+                if count in word_indice:
+                    flag = 1
         if len(word) != len(Word):
             flag = 0
         if flag == 1:
