@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="letter-tools",
-    version="0.1.8",
+    version="0.1.9",
     author="Hostedposted",
     author_email="hostedpostedsite@gmail.com",
     description="Python tools for doing stuff with letters.",

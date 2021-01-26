@@ -123,6 +123,14 @@ Now for the derandomize and randomize functions.
 ['welcome']
 ```
 
+Now for custom score.
+
+```py
+>>> from letter_tools import custom_score
+>>> custom_score('letter', {'l': 13, 'e': 7, 't': 16, 'r': 1}) 
+60
+```
+
 # Usage
 
 Word score could help you with making a game to find certain scored words. Here is an example for 100 scored words. This will not eliminate invalid words.

@@ -192,3 +192,22 @@ def derandomize(Word):
         if flag == 1:
             arr.append(word)
     return arr
+
+def custom_score(word, opt):
+    """
+    Make your custom word score. Just put in a dictionary each letter being assigned a score.
+    Args:
+        word: the word to get the score of
+        opt: the options to use.
+    Retuns:
+        The word in the score opt gave.
+    Raises:
+        Exception: if opt is not a dict
+    """
+    if isinstance(opt, dict) == False:
+        raise Exception("options are not a dict.")
+    score = 0
+    for i in list(word):
+        score += opt[i]
+        
+    return score
