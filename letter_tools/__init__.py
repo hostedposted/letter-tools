@@ -130,3 +130,15 @@ def scrabble_score(word):
         score += arr[i]
     
     return score
+
+def randomize(word):
+    """
+    Mix up the letters in a word.
+    Args:
+        word: the word to be changed
+    Results:
+        The word in a different order
+    """
+
+    letters = list(word)
+    return "".join(random.sample(letters,len(letters)))
