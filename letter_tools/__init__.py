@@ -2,6 +2,7 @@
 Module for doing stuff with letters.
 """
 import random
+import requests
 
 def range(start = 1, stop = 1, step = 1):
     """Find a range from one letter to another.
@@ -161,3 +162,33 @@ def randomize(word):
     letters = list(word)
     return "".join(random.sample(letters,len(letters)))
 
+
+def derandomize(Word):
+    """
+    Show all posible words that this be.
+    Args:
+        Word: the word to be derandomized
+    Results:
+        All valid words with the same letters
+    """
+    Word = list(Word)
+    words = requests.get("https://raw.githubusercontent.com/hostedposted/letter-tools/master/words.json").json()
+    arr = []
+    for word in words: 
+        flag = 1
+        chars = {} 
+        for i in word: 
+            chars[i] = chars.get(i, 0) + 1
+        for key in chars:
+            if flag == 0:
+                break
+            if key not in Word: 
+                flag = 0
+            else: 
+                if Word.count(key) != chars[key]: 
+                    flag = 0
+        if len(word) != len(Word):
+            flag = 0
+        if flag == 1:
+            arr.append(word)
+    return arr
