@@ -176,9 +176,11 @@ def derandomize(Word):
     arr = []
     for word in words: 
         flag = 1
-        chars = {} 
+        chars = []
+        charsd = {}
         for i in word: 
-            chars[i] = chars.get(i, 0) + 1
+            charsd[i] = charsd.get(i, 0) + 1
+            chars.append(i)
         count = -1
         for key in chars:
             count += 1
@@ -187,7 +189,7 @@ def derandomize(Word):
             if key not in Word: 
                 flag = 0
             else: 
-                if Word.count(key) != chars[key]: 
+                if Word.count(key) != charsd[key]: 
                     flag = 0
             if "?" in Word:
                 word_indice = [i for i, x in enumerate(Word) if x == '?']
