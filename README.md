@@ -35,15 +35,6 @@ g
 >>> rand(1, 10)
 7
 ```
-Another example for randomly picking a letter out of numbers.
-
-```py
->>> from letter_tools import randlet
->>> rand(4, 8)
-h
->>> rand(5, 7)
-e
-```
 
 Next an example for ranges.
 
@@ -117,6 +108,19 @@ Here we will use the scrabble score, it does almost the same thing as word score
 5   
 >>> print(scrabble_score("letter")) 
 6   
+```
+
+Now for the derandomize and randomize functions.
+
+```py
+>>> # For this we will use a word 'welcome' and randomize it.
+>>> from letter_tools import randomize
+>>> randomize("welcome") 
+'mlcoeew'
+>>> # Now we will derandomize 'mlcoeew' 
+>>> from letter_tools import derandomize
+>>> derandomize("mlcoeew") 
+['welcome']
 ```
 
 # Usage
