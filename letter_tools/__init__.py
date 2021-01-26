@@ -100,20 +100,29 @@ def rand(a = 1, b = 1):
         b -= 1
         return full[random.randint(a, b)]
 
-def word_score(word):
+def word_score(word, opt=None):
     """
     Count up the score of a word. a=1, b=2, c=3
     Args:
         word: the word to get the score of
+        opt: if opt does not equal None z will be 1 and a will be 26
     Returns:
         The score of the word
     """
-    arr = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
-    score = 0
-    for i in list(word):
-        score += arr[i]
-    
-    return score
+    if opt == None:
+        arr = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
+        score = 0
+        for i in list(word):
+            score += arr[i]
+        
+        return score
+    else:
+        arr = {'a': 26, 'b': 25, 'c': 24, 'd': 23, 'e': 22, 'f': 21, 'g': 20, 'h': 19, 'i': 18, 'j': 17, 'k': 16, 'l': 15, 'm': 14, 'n': 13, 'o': 12, 'p': 11, 'q': 10, 'r': 9, 's': 8, 't': 7, 'u': 6, 'v': 5, 'w': 4, 'x': 3, 'y': 2, 'z': 1}
+        score = 0
+        for i in list(word):
+            score += arr[i]
+        
+        return score
 
 def scrabble_score(word):
     """
