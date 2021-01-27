@@ -165,7 +165,7 @@ def randomize(word):
 
 def derandomize(Word):
     """
-    Show all posible words that word can be.
+    Show all possible words that word can be.
     Args:
         Word: the word to be derandomized
     Results:
