@@ -1,5 +1,3 @@
-
-
 # Letter Tools
 [![Downloads](https://pepy.tech/badge/letter-tools/month)](https://pepy.tech/project/letter-tools)
 
@@ -8,7 +6,6 @@
 - [Installing](#installing)
 - [Examples](#examples)
 - [Usage](#usage)
-
 
 # Intro
 
