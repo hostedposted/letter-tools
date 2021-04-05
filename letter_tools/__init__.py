@@ -1,6 +1,7 @@
 """Module for doing stuff with letters."""
 import random
 import requests
+import re
 
 def range(start = 1, stop = 1, step = 1):
     """Find a range from one letter to another.    
@@ -167,36 +168,8 @@ def derandomize(Word):
     Results:
         All valid words with the same letters
     """
-    Word = list(Word)
     words = requests.get("https://raw.githubusercontent.com/hostedposted/letter-tools/master/words.json").json()
-    arr = []
-    for word in words:
-        flag = 1
-        chars = []
-        charsd = {}
-        for i in word:
-            charsd[i] = charsd.get(i, 0) + 1
-            chars.append(i)
-        # The commented code is still in beta.
-        #count = -1
-        for key in chars:
-            #count += 1
-            if flag == 0:
-                break
-            if key not in Word:
-                flag = 0
-            else:
-                if Word.count(key) != charsd[key]:
-                    flag = 0
-            #if "?" in Word:
-                #word_indice = [i for i, x in enumerate(Word) if x == '?']
-                #if count in word_indice:
-                    #flag = 1
-        if len(word) != len(Word):
-            flag = 0
-        if flag == 1:
-            arr.append(word)
-    return arr
+    return [word for word in words if sorted(Word) == sorted(word) or re.search("^"+Word.replace("?", ".")+"$", word)]
 
 def custom_score(word, opt):
     """Make your custom word score. Just put in a dictionary each letter being assigned a score.
